@@ -1,37 +1,59 @@
 import java.io.*;   import java.util.*;  import java.lang.*;
 class MergeSort 
-{      static public void DoMerge(int [] numbers, int left, int mid, int right)
-      {  int [] temp = new int[25];   int i, left_end, num_elements, tmp_pos;
-        left_end = (mid - 1);       tmp_pos = left;
-        num_elements = (right - left + 1);
-         while ((left <= left_end) && (mid <= right))
-        {        if (numbers[left] <= numbers[mid])
-                temp[tmp_pos++] = numbers[left++];
-               else
-               temp[tmp_pos++] = numbers[mid++];
-        }
-        while (left <= left_end)
-            temp[tmp_pos++] = numbers[left++];
-        while (mid <= right)
-            temp[tmp_pos++] = numbers[mid++];
-        for (i = 0; i < num_elements; i++)
-        {    numbers[right] = temp[right];   right--;
-        }
-	  }
-    static public void MergeSort_Recursive(int [] numbers, int left, int right)
-    {    int mid;
-       if (right > left)
-       {  mid = (right + left) / 2;
-         MergeSort_Recursive(numbers, left, mid);
-         MergeSort_Recursive(numbers, (mid + 1), right);
-        DoMerge(numbers, left, (mid+1), right);
-       }
-    }
-    public static void main(String[] args)
-     { int[] numbers = { 3, 8, 7, 5, 2, 1, 9, 6, 4 };
+{     public static void main (String[] args) throws java.lang.Exception
+	{
+		int[] numbers = { 3, 8, 7, 5, 2, 1, 9, 6, 4 };
       int len = 9; System.out.println("MergeSort By Recursive Method");
-       MergeSort_Recursive(numbers, 0, len - 1);
+       mergeSort(numbers, 0, len - 1);
         for (int i = 0; i < 9; i++)
         System.out.println(numbers[i]);
-     }
+	}
+	
+    static public void merge(int Arr[], int start, int mid, int end) {
+
+	// create a temp array
+	int temp[] = new int[end - start + 1];
+
+	// crawlers for both intervals and for temp
+	int i = start, j = mid+1, k = 0;
+
+	// traverse both arrays and in each iteration add smaller of both elements in temp 
+	while(i <= mid && j <= end) {
+		if(Arr[i] <= Arr[j]) {
+			temp[k] = Arr[i];
+			k += 1; i += 1;
+		}
+		else {
+			temp[k] = Arr[j];
+			k += 1; j += 1;
+		}
+	}
+
+	// add elements left in the first interval 
+	while(i <= mid) {
+		temp[k] = Arr[i];
+		k += 1; i += 1;
+	}
+
+	// add elements left in the second interval 
+	while(j <= end) {
+		temp[k] = Arr[j];
+		k += 1; j += 1;
+	}
+
+	// copy temp to original interval
+	for(i = start; i <= end; i += 1) {
+		Arr[i] = temp[i - start];
+	}
+}
+     
+    static public void mergeSort(int Arr[], int start, int end) {
+
+	if(start < end) {
+		int mid = (start + end) / 2;
+		mergeSort(Arr, start, mid);
+		mergeSort(Arr, mid+1, end);
+		merge(Arr, start, mid, end);
+	}
+}
 }
