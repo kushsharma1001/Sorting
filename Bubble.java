@@ -61,3 +61,23 @@ Third Pass:
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+
+##Recusrive Bubble Sort:
+  recursiveBubbleSort(arr[], n){
+        // Base case
+        if (n == 1)
+        return;
+
+        // One pass of bubble sort. After
+        // this pass, the largest element
+        // is moved (or bubbled) to end.
+        for(i=0; i<n-1; i++){
+            if(arr[i] > arr[i+1])
+            {
+             swap(arr[i], arr[i+1]);
+            }
+        }
+
+        // recursion for remaining elements in array
+        recursiveBubbleSort(arr, n-1);
+    }
