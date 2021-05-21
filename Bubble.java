@@ -1,17 +1,11 @@
 import java.io.*;
 class Bubble
 {	public static void main(String args[])
-	{	Console con=System.console();	
-			int arr[]=new int[6];	
-		System.out.println("Enter 6 elements ");
-	
-		for(int i=0;i<arr.length;i++)
-		{	arr[i]=Integer.parseInt(con.readLine()); 								//BUBBLE SORT
-		}
-		
+	{	
+			int arr[]=new int[]{2,5,1,6,3,4};
+
 			for(int z=0;z<arr.length;z++)
-								{	System.out.print(arr[z]+" ");
-								}
+			{	System.out.print(arr[z]+" "); }						}
 			System.out.println();
 		
 		for(int i=0;i<arr.length-1;i++)
@@ -22,12 +16,7 @@ class Bubble
 				{int temp=arr[j];
 				arr[j]=arr[j+1];
 				arr[j+1]=temp;
-				flag=1;
-					for(int z=0;z<arr.length;z++)
-								{	System.out.print(arr[z]+" ");
-								}
-							System.out.println();
-				
+				flag=1;				
 				}
 			}
 		 		
@@ -35,12 +24,10 @@ class Bubble
 				break;
 			}
 		}
-		System.out.println("After bubble sorting ");
+		System.out.println("After bubble sorting: ");
 		for(int i=0;i<arr.length;i++)
 		{	System.out.print(arr[i]+" ");
-		}
-	
-		
+		}	
 	}
 }
 
