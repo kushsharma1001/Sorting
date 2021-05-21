@@ -71,6 +71,14 @@ class Selection
      					 }
 				}*/
 
+				/*
+				 for(int i = 0; i < A.length; ++i) {  
+            				int min_index = findMinIndex(A, i);  
+  
+            				if(i != min_index)  
+                			swap(A, i, min_index);  
+        			 }  
+				*/
 			
 			System.out.println("After Slection sorting:");
 		
