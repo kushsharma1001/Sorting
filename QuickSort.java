@@ -40,3 +40,6 @@ public class QuickSort
 		System.out.println();
 	}
 }
+
+Worst    Avge     Best
+O(nLogn) O(nLogn) O(n^2)
