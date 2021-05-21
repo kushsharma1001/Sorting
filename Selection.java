@@ -11,7 +11,7 @@ class Selection
 			{			//arr[i] = Integer.parseInt(con.readLine());	
 						arr[i] = s.nextInt();
 					/*	try{
-							arr[i]=Integer.parseInt(br.readLine());									//SELECTION SORT	
+							arr[i]=Integer.parseInt(br.readLine());				//SELECTION SORT	
 						}
 						catch(Exception any)
 						{
@@ -28,17 +28,17 @@ class Selection
 				
 		
 			for(int i=0;i<arr.length-1;i++)
-			{	int index=i;
+			{	int minIndex=i;
 					for(int j=i+1;j<arr.length;j++)
-					{		if(arr[j]<arr[index])
-							{	index=j;				
+					{		if(arr[j]<arr[minIndex])
+							{	minIndex=j;				
 							}
 					}
 					
-					if(index!=i)
+					if(minIndex!=i)
 					{	int temp=arr[i];
-						arr[i]=arr[index];
-						arr[index]=temp;
+						arr[i]=arr[minIndex];
+						arr[minIndex]=temp;
 							
 							for(int z=0;z<arr.length;z++)
 								{	System.out.print(arr[z]+" ");
