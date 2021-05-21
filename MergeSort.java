@@ -57,3 +57,6 @@ class MergeSort
 	}
 }
 }
+
+Worst    Avge      Best
+O(nLogn) O(nLogn) O(nLogn)
