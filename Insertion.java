@@ -3,7 +3,7 @@ class Insertion
 {		public static void main(String args[])
 		{	int arr[]=new int[]{25, 17, 31, 13, 2};
 			for(int k=0;k<arr.length;k++)
-			{ System.out.print(arr[k]+" ");}							}
+			{ System.out.print(arr[k]+" ");}							
 			System.out.println();
 			
 			for(int i=1;i<arr.length;i++)
