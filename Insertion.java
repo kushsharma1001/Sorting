@@ -1,15 +1,9 @@
 import java.io.*;
 class Insertion
 {		public static void main(String args[])
-		{	Console con=System.console();	int arr[]=new int[6];
-			System.out.println("Enter 6 elements ");
-			for(int i=0;i<arr.length;i++)
-			{	arr[i]=Integer.parseInt(con.readLine());
-			}
-			
-				for(int k=0;k<arr.length;k++)
-							{	System.out.print(arr[k]+" ");
-							}
+		{	int arr[]=new int[]{4,2,1,6,5,3};
+			for(int k=0;k<arr.length;k++)
+			{ System.out.print(arr[k]+" ");}							}
 			System.out.println();
 			
 			for(int i=1;i<arr.length;i++)
@@ -18,11 +12,6 @@ class Insertion
 						{	int temp=arr[j];
 						 	arr[j]=arr[j-1];
 						 	arr[j-1]=temp;
-						 
-						 	for(int k=0;k<arr.length;k++)
-							{	System.out.print(arr[k]+" ");
-							}
-						 	System.out.println();
 						}
 					}
 			}
